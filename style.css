@@ -1,0 +1,300 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, #15094d 0%, #3c5fb9 100%);
+  background-repeat: no-repeat;
+  height: 46.5rem;
+  text-align: center;
+}
+
+.gamePannel {
+  display: none;
+}
+
+.hide2 {
+  display: none;
+}
+
+.startGame {
+  margin-top: 15rem;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  font-size: 20px;
+  border: none;
+  animation: scale 3s infinite;
+  background: linear-gradient(90deg, #1cb5e0, #000851);
+  background-size: 200% 200%;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    background: linear-gradient(90deg, #1cb5e0, #000851);
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    color: white;
+    /* box-shadow: 1px 1px 20px red; */
+  }
+  50% {
+    transform: scale(1.1);
+    background-position: 100% 50%;
+    color: black;
+    box-shadow: 1px 1px 20px white;
+  }
+  100% {
+    transform: scale(1);
+    background-position: 0% 50%;
+    color: white;
+    /* box-shadow: 1px 1px 20px red; */
+  }
+}
+
+h1 {
+  position: relative;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  margin-bottom: 20px;
+}
+
+.turn {
+  color: rgba(255, 255, 255, 0.762);
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 4rem;
+  animation: upDown 2s infinite;
+}
+
+div {
+  margin: 1rem;
+  height: 75vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.game {
+  height: 60vmin;
+  width: 60vmin;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vmin;
+}
+
+.box {
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 2rem;
+  border: none;
+  font-size: 5rem;
+  background-color: azure;
+  box-shadow: 2px 5px 10px rgb(1, 1, 1, 0.4);
+  transition: transform 330ms ease-in-out;
+}
+
+.box:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: transform 330ms ease-in-out;
+  background-color: aliceblue;
+}
+
+.reset-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #1cb5e0, #000851);
+  border: none;
+  border-radius: 1.5rem;
+  color: azure;
+  transform: scale(1);
+  transition: transform 330ms ease-in-out, background-color 330ms ease-in-out;
+  will-change: transform;
+  margin-top: -1rem;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+}
+
+.box.o {
+  color: purple;
+}
+
+.box.x {
+  color: black;
+}
+
+.hide {
+  display: none;
+}
+
+.none {
+  display: none;
+}
+
+.msg {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 1rem;
+  animation: upDown 2s ease-in-out infinite;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(15px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: -5rem;
+  margin-top: 5rem;
+  color: white;
+}
+
+.msg2 {
+  font-size: 30px;
+  margin-bottom: -4rem;
+  margin-top: 4rem;
+  color: white;
+  width: 18ch;
+  overflow: hidden;
+  white-space: nowrap;
+  /* border-right: 2px solid black; */
+  animation: typing 2.5s steps(18);
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+/* Blinking cursor effect */
+/* @keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+} */
+
+.new-btn {
+  padding: 1rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #1cb5e0, #000851);
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  transition: transform 330ms ease-in-out;
+  margin-top: 4rem;
+}
+
+.new-btn:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: transform 330ms ease-in-out;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: linear-gradient(180deg, #3c5fb9 0%, #15094d 100%);
+    background-repeat: no-repeat;
+    height: 52.7rem;
+    text-align: center;
+  }
+
+  .box {
+    font-size: 3rem;
+  }
+
+  .box:hover {
+    cursor: default;
+    transform: none;
+    transition: none;
+  }
+
+  .reset-btn {
+    margin-top: 2rem;
+  }
+  .reset-btn:hover {
+    cursor: default;
+    transform: none;
+    transition: none;
+  }
+
+  .new-btn:hover {
+    cursor: default;
+    transform: none;
+    transition: none;
+  }
+
+  main > div {
+    gap: 1rem;
+    margin-top: 10rem;
+  }
+
+  .msg {
+    color: white;
+    font-size: 33px;
+    margin-bottom: 1rem;
+    animation: upDown 2s ease-in-out infinite;
+  }
+
+  h2 {
+    color: white;
+    margin-bottom: -5rem;
+    width: 9ch;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    animation: typing 1.5s steps(9), blink 0.7s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .msg2 {
+    color: white;
+    margin-bottom: 0rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
